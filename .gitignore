@@ -128,3 +128,13 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+/.vs
+/APIRequest/bin
+/APIRequest/obj
+/DatabaseInteraction/.vs/DBInt
+/DatabaseInteraction/bin
+/DatabaseInteraction/obj
+/FileReadingAndWriting/bin
+/FileReadingAndWriting/obj
+/SimpleWebServer/bin
+/SimpleWebServer/obj
