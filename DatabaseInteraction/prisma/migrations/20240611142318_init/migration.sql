@@ -1,0 +1,28 @@
+BEGIN TRY
+
+BEGIN TRAN;
+
+-- CreateTable
+CREATE TABLE [dbo].[Document] (
+    [id] INT NOT NULL IDENTITY(1,1),
+    [name] VARCHAR(150) NOT NULL,
+    [body] NVARCHAR(1000) NOT NULL,
+    [notes] VARCHAR(500),
+    [created] DATETIME2 NOT NULL CONSTRAINT [Document_created_df] DEFAULT CURRENT_TIMESTAMP,
+    [updated] DATETIME2,
+    CONSTRAINT [Document_pkey] PRIMARY KEY CLUSTERED ([id]),
+    CONSTRAINT [Document_name_key] UNIQUE NONCLUSTERED ([name])
+);
+
+COMMIT TRAN;
+
+END TRY
+BEGIN CATCH
+
+IF @@TRANCOUNT > 0
+BEGIN
+    ROLLBACK TRAN;
+END;
+THROW
+
+END CATCH

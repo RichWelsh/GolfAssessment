@@ -1,0 +1,13 @@
+{
+  "name": "simple-web-server",
+  "version": "0.0.0",
+  "description": "SimpleWebServer",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  },
+  "eslintConfig": {}
+}

@@ -1,0 +1,20 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model Document {
+  id		Int			@id @default(autoincrement())
+  name		String		@db.VarChar(150) @unique
+  body		String
+  notes		String?		@db.VarChar(500)
+  created	DateTime	@default(now())
+  updated	DateTime?
+}
